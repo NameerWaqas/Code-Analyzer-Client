@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, Dimensions, StyleSheet } from 'react-native';
 import { Button } from 'native-base';
+import * as Animatable from 'react-native-animatable';
 
 let screenWidth = Dimensions.get('window').width;
 let screenHeight = Dimensions.get('window').height
@@ -31,7 +32,8 @@ export default function Console({ tokenSet, setConsoleVisiblity,sendRequest }) {
         <View style={{ width: screenWidth ,flex:1}}>
             <Button block onPress={handleButtonPress}
                 style={style.consoleButton}
-            ><Text style={{fontSize:20,color:"white"}}>Terminal</Text></Button>
+            ><Animatable.Text animation="pulse" iterationCount={15}
+             style={{fontSize:20,color:"white"}}>Terminal</Animatable.Text></Button>
 
             <TextInput multiline={true} numberOfLines={100} style={style.consoleInput}
                 editable={false} placeholder={consoleText} placeholderTextColor="white" />
@@ -44,7 +46,7 @@ let style = StyleSheet.create(
     {
         consoleButton: {
             height:50,
-            backgroundColor:"#457b9d",
+            backgroundColor:"#161a1d",
             color:"white",
             
         },

@@ -9,6 +9,7 @@ import {
 import WebViewScreen from './screens/webView';
 import Editor from './screens/editor';
 import SyntaxManual from "./screens/syntaxManual"
+import Developers from './screens/developers';
 
 export default function App(){
 
@@ -22,6 +23,7 @@ export default function App(){
         <Editor />
         <SyntaxManual />
         <WebViewScreen />
+        <Developers/>
       </ScrollView>
     </>
   );
